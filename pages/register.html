@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register at Sodhi Growth Hub. Easy multi-step registration with secure payment options.">
+    <title>Register - Sodhi Growth Hub</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    
+    <div class="scroll-progress"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="logo-text">Sodhi <span>Growth Hub</span></div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="register.html" class="nav-link active"><strong>Register</strong></a></li>
+                <li class="mobile-only"><a href="login.html" class="nav-link">Login</a></li>
+                <li class="mobile-only"><a href="signup.html" class="nav-link">Sign Up</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Student Registration</h1>
+            <p>Complete the registration in just 3 easy steps and start your learning journey today</p>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> / <span>Register</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Register Form -->
+    <section class="register-page">
+        <div class="container">
+            <div class="register-wrapper">
+                <!-- Form Section -->
+                <div class="register-form-card">
+                    <!-- Step Indicators -->
+                    <div class="step-indicators" id="stepIndicators" data-step="1">
+                        <div class="step-indicator active" data-step="1">
+                            <div class="step-circle">1</div>
+                            <span class="step-label">Personal Info</span>
+                        </div>
+                        <div class="step-indicator" data-step="2">
+                            <div class="step-circle">2</div>
+                            <span class="step-label">Course & Contact</span>
+                        </div>
+                        <div class="step-indicator" data-step="3">
+                            <div class="step-circle">3</div>
+                            <span class="step-label">Payment</span>
+                        </div>
+                    </div>
+                    
+                    <form id="registerForm" novalidate>
+                        <!-- Step 1: Personal Information -->
+                        <div class="form-step active" data-step="1">
+                            <div class="step-header">
+                                <h2><i class="fas fa-user-circle" style="color: var(--primary-blue); margin-right: 8px;"></i>Personal Information</h2>
+                                <p>Tell us a bit about yourself</p>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Parent's Name *</label>
+                                    <input type="text" class="form-control" id="parentName" placeholder="Enter parent's name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Gender</label>
+                                    <select class="form-control" id="gender">
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Profile Photo</label>
+                                <div class="photo-upload" id="photoUpload">
+                                    <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p><strong>Click to upload</strong> or drag and drop</p>
+                                    <small>PNG, JPG up to 5MB</small>
+                                </div>
+                            </div>
+                            
+                            <div class="form-nav">
+                                <div></div>
+                                <button type="button" class="btn btn-primary" id="next1">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Course Selection & Contact -->
+                        <div class="form-step" data-step="2">
+                            <div class="step-header">
+                                <h2><i class="fas fa-book" style="color: var(--primary-blue); margin-right: 8px;"></i>Course & Contact Details</h2>
+                                <p>Choose your course and provide contact information</p>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+91 98765 43210" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" placeholder="your@email.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Class / Grade *</label>
+                                    <select class="form-control" id="studentClass" required>
+                                        <option value="">Select Class</option>
+                                        <option value="1">Class 1</option>
+                                        <option value="2">Class 2</option>
+                                        <option value="3">Class 3</option>
+                                        <option value="4">Class 4</option>
+                                        <option value="5">Class 5</option>
+                                        <option value="6">Class 6</option>
+                                        <option value="7">Class 7</option>
+                                        <option value="8">Class 8</option>
+                                        <option value="9">Class 9</option>
+                                        <option value="10">Class 10</option>
+                                        <option value="11">Class 11</option>
+                                        <option value="12">Class 12</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Course Selection *</label>
+                                    <select class="form-control" id="courseSelect" required>
+                                        <option value="">Select a Course</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Address *</label>
+                                <textarea class="form-control" id="address" placeholder="Enter your complete address" required></textarea>
+                            </div>
+                            
+                            <div class="form-nav">
+                                <button type="button" class="btn btn-secondary" id="back2">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn btn-primary" id="next2">
+                                    Next Step <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Payment -->
+                        <div class="form-step" data-step="3">
+                            <div class="step-header">
+                                <h2><i class="fas fa-credit-card" style="color: var(--primary-blue); margin-right: 8px;"></i>Payment Method</h2>
+                                <p>Choose your preferred payment method (UI only - demo)</p>
+                            </div>
+                            
+                            <div class="payment-methods">
+                                <div class="payment-option selected" data-method="upi">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <p>UPI</p>
+                                </div>
+                                <div class="payment-option" data-method="card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <p>Card</p>
+                                </div>
+                                <div class="payment-option" data-method="netbank">
+                                    <i class="fas fa-university"></i>
+                                    <p>Net Banking</p>
+                                </div>
+                            </div>
+                            
+                            <!-- UPI Form -->
+                            <div class="payment-card-form active" id="upiForm">
+                                <div class="form-group">
+                                    <label class="form-label">UPI ID</label>
+                                    <input type="text" class="form-control" placeholder="yourname@upi">
+                                </div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                    <i class="fas fa-info-circle"></i> A payment request will be sent to your UPI app
+                                </p>
+                            </div>
+                            
+                            <!-- Card Form -->
+                            <div class="payment-card-form" id="cardForm">
+                                <div class="form-group">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Expiry Date</label>
+                                        <input type="text" class="form-control" placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">CVV</label>
+                                        <input type="password" class="form-control" placeholder="123" maxlength="3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Cardholder Name</label>
+                                    <input type="text" class="form-control" placeholder="Name on Card">
+                                </div>
+                            </div>
+                            
+                            <!-- Net Banking -->
+                            <div class="payment-card-form" id="netbankForm">
+                                <div class="form-group">
+                                    <label class="form-label">Select Your Bank</label>
+                                    <select class="form-control">
+                                        <option>State Bank of India</option>
+                                        <option>HDFC Bank</option>
+                                        <option>ICICI Bank</option>
+                                        <option>Axis Bank</option>
+                                        <option>Punjab National Bank</option>
+                                        <option>Other Banks</option>
+                                    </select>
+                                </div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                    <i class="fas fa-info-circle"></i> You will be redirected to your bank's portal
+                                </p>
+                            </div>
+                            
+                            <div style="margin-top: 24px; padding: 16px; background: rgba(67, 97, 238, 0.05); border-radius: 12px; display: flex; align-items: flex-start; gap: 12px;">
+                                <i class="fas fa-shield-alt" style="color: var(--primary-blue); font-size: 1.5rem; margin-top: 2px;"></i>
+                                <div>
+                                    <strong>100% Secure Payment</strong>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 4px 0 0;">Your payment information is encrypted and secure. This is a demo payment interface only.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-nav">
+                                <button type="button" class="btn btn-secondary" id="back3">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">
+                                    Complete Registration <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Course Summary -->
+                <div class="summary-card">
+                    <h3><i class="fas fa-clipboard-list" style="color: var(--primary-blue); margin-right: 8px;"></i>Order Summary</h3>
+                    
+                    <div id="summaryDetails">
+                        <div class="summary-row">
+                            <span>Course:</span>
+                            <strong id="summaryCourse">Not selected</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Duration:</span>
+                            <strong id="summaryDuration">--</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Class:</span>
+                            <strong id="summaryClass">--</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Registration Fee:</span>
+                            <strong>₹500</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Course Fee:</span>
+                            <strong id="summaryFee">₹0</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (18% GST):</span>
+                            <strong id="summaryTax">₹0</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span>Total Amount:</span>
+                        <span class="amount" id="summaryTotal">₹500</span>
+                    </div>
+                    
+                    <ul class="summary-features">
+                        <li><i class="fas fa-check-circle"></i> Lifetime course access</li>
+                        <li><i class="fas fa-check-circle"></i> Study material included</li>
+                        <li><i class="fas fa-check-circle"></i> Expert faculty support</li>
+                        <li><i class="fas fa-check-circle"></i> Certificate on completion</li>
+                        <li><i class="fas fa-check-circle"></i> Doubt clearing sessions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Success Popup -->
+    <div class="success-popup" id="successPopup">
+        <div class="popup-content">
+            <div class="success-check">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>Registration Successful!</h2>
+            <p>Welcome to Sodhi Growth Hub! 🎉<br>We've received your registration. Our team will contact you within 24 hours with further details.</p>
+            <a href="../index.html" class="btn btn-primary">
+                Back to Home <i class="fas fa-home"></i>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>
+                        <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                        Sodhi <span>Growth Hub</span>
+                    </h3>
+                    <p>Empowering students from Class 1 to 12 with quality education, expert teachers, and modern teaching methods.</p>
+                    
+                    <form class="newsletter-form" id="newsletterForm">
+                        <p style="font-size: 0.85rem; margin-bottom: 8px; color: rgba(255,255,255,0.7); font-weight: 500;">Subscribe to our newsletter</p>
+                        <div class="form-group">
+                            <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Top Courses</h4>
+                    <ul>
+                        <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Class 10 Board Prep</a></li>
+                        <li><a href="courses.html"><i class="fas fa-chevron-right"></i> PCM Science Elite</a></li>
+                        <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Commerce prep</a></li>
+                        <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Spoken English</a></li>
+                        <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Education Lane, Sector 21, New Delhi, India - 110001</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@sodhigrowthhub.com</span>
+                    </div>
+                    
+                    <div class="footer-social" style="margin-top: 15px;">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> <a href="#">Sodhi Growth Hub</a>. All rights reserved. Designed with <i class="fas fa-heart" style="color: #f72585;"></i> for students.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script src="../js/data.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+</html>
